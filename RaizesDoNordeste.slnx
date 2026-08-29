@@ -1,3 +1,11 @@
 <Solution>
-  <Project Path="RaizesDoNordeste.Domain/RaizesDoNordeste.Domain.csproj" />
+  <Folder Name="/src/">
+    <Project Path="RaizesDoNordeste.API/RaizesDoNordeste.API.csproj" />
+    <Project Path="RaizesDoNordeste.Application/RaizesDoNordeste.Application.csproj" />
+    <Project Path="RaizesDoNordeste.Domain/RaizesDoNordeste.Domain.csproj" />
+    <Project Path="RaizesDoNordeste.Infrastructure/RaizesDoNordeste.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="RaizesDorNordeste.Tests/RaizesDorNordeste.Tests.csproj" />
+  </Folder>
 </Solution>

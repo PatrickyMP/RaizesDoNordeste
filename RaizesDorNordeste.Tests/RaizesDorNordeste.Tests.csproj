@@ -15,6 +15,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RaizesDoNordeste.API\RaizesDoNordeste.API.csproj" />
+    <ProjectReference Include="..\RaizesDoNordeste.Application\RaizesDoNordeste.Application.csproj" />
+    <ProjectReference Include="..\RaizesDoNordeste.Domain\RaizesDoNordeste.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Using Include="Xunit" />
   </ItemGroup>
 

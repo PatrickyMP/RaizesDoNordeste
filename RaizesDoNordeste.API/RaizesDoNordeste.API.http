@@ -1,6 +1,0 @@
-@RaizesDoNordeste.API_HostAddress = http://localhost:5287
-
-GET {{RaizesDoNordeste.API_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
