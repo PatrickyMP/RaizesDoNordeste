@@ -5,23 +5,17 @@ using System.Data;
 
 namespace RaizesDoNordeste.Infrastructure
 {
-    public class AppDbContext(DbContextOptions options) : DbContext(options), IAppDbContext
+    public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options), IAppDbContext
     {
-        public DbSet<User> Users => throw new NotImplementedException();
-
-        public DbSet<Branch> Branches => throw new NotImplementedException();
-
-        public DbSet<Product> Products => throw new NotImplementedException();
-
-        public DbSet<Stock> Stocks => throw new NotImplementedException();
-
-        public DbSet<StockMovement> StockMovements => throw new NotImplementedException();
-
-        public DbSet<Order> Orders => throw new NotImplementedException();
-
-        public DbSet<Payment> Payments => throw new NotImplementedException();
-
-        public DbSet<AuditLog> AuditLogs => throw new NotImplementedException();
+        public DbSet<User> Users => Set<User>();
+        public DbSet<Branch> Branches => Set<Branch>();
+        public DbSet<Product> Products => Set<Product>();
+        public DbSet<Stock> Stocks => Set<Stock>();
+        public DbSet<StockMovement> StockMovements => Set<StockMovement>();
+        public DbSet<Order> Orders => Set<Order>();
+        public DbSet<OrderItem> OrderItems => Set<OrderItem>();
+        public DbSet<Payment> Payments => Set<Payment>();
+        public DbSet<AuditLog> AuditLogs => Set<AuditLog>();
 
         protected override void OnModelCreating(ModelBuilder model)
         {

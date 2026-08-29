@@ -13,6 +13,7 @@ namespace RaizesDoNordeste.Application
         DbSet<Order> Orders { get; }
         DbSet<Payment> Payments { get; }
         DbSet<AuditLog> AuditLogs { get; }
+        DbSet<OrderItem> OrderItems { get; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
         Task<T> InTransactionAsync<T>(Func<Task<T>> operation);
     }
