@@ -1,6 +1,6 @@
 ﻿using RaizesDoNordeste.Domain;
 
-namespace RaizesDorNordeste.Tests
+namespace RaizesDoNordeste.Tests
 {
     public class DomainTests
     {

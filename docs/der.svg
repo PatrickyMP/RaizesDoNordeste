@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="1170" viewBox="0 0 1240 1170">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#537086"/></marker></defs>
+<rect width="1240" height="1170" fill="#f3f6fa"/>
+<style>text{font-family:Arial,sans-serif}.title{font-size:26px;font-weight:bold;fill:#14344b}.field{font-size:15px;fill:#19384c}.edge{fill:none;stroke:#537086;stroke-width:2;marker-end:url(#arrow)}.label{font-size:13px;fill:#36566d}</style>
+<text x="40" y="45" class="title">Raízes do Nordeste · Modelo relacional</text>
+<text x="40" y="68" class="label">Nove tabelas · Entity Framework Core · PostgreSQL · IDs GUID</text>
+<path d="M360 180 H460" class="edge"/><text x="370" y="165" class="label">0..1 → 0..*</text>
+<path d="M310 320 L500 395" class="edge"/><text x="332" y="351" class="label">1 → 0..*</text>
+<path d="M360 495 H460" class="edge"/><text x="372" y="480" class="label">1 → 0..*</text>
+<path d="M330 625 L480 755" class="edge"/><text x="336" y="702" class="label">1 → 0..*</text>
+<path d="M360 850 H460" class="edge"/><text x="372" y="835" class="label">1 → 0..*</text>
+<path d="M200 985 V1040 H1040 V985" class="edge"/><text x="560" y="1028" class="label">Products 1 → OrderItems 0..*</text>
+<path d="M780 495 H880" class="edge"/><text x="792" y="480" class="label">1 → 0..*</text>
+<path d="M730 625 L930 755" class="edge"/><text x="760" y="689" class="label">1 → 0..*</text>
+<path d="M780 860 H830 V190 H880" class="edge"/><text x="834" y="350" class="label">1 → 0..*</text>
+<rect x="40" y="90" width="320" height="230" rx="8" fill="white" stroke="#b7cbd9"/>
+<path d="M48 90 H352 Q360 90 360 98 V130 H40 V98 Q40 90 48 90" fill="#173e58"/>
+<text x="56" y="117" font-family="Arial" font-size="18" font-weight="bold" fill="white">Users</text>
+<text x="56" y="158" class="field">PK Id : GUID</text>
+<text x="56" y="183" class="field">UK Email : string</text>
+<text x="56" y="208" class="field">Name / PasswordHash</text>
+<text x="56" y="233" class="field">Role / Active</text>
+<text x="56" y="258" class="field">LoyaltyConsent / UpdatedAt</text>
+<text x="56" y="283" class="field">LoyaltyPoints / Version</text>
+<rect x="460" y="90" width="320" height="230" rx="8" fill="white" stroke="#b7cbd9"/>
+<path d="M468 90 H772 Q780 90 780 98 V130 H460 V98 Q460 90 468 90" fill="#173e58"/>
+<text x="476" y="117" font-family="Arial" font-size="18" font-weight="bold" fill="white">AuditLogs</text>
+<text x="476" y="158" class="field">PK Id : GUID</text>
+<text x="476" y="183" class="field">FK UserId : GUID (opcional)</text>
+<text x="476" y="208" class="field">Action / Entity / EntityId</text>
+<text x="476" y="233" class="field">CreatedAt : UTC</text>
+<text x="476" y="258" class="field">EntityId: referência lógica</text>
+<rect x="880" y="90" width="320" height="230" rx="8" fill="white" stroke="#b7cbd9"/>
+<path d="M888 90 H1192 Q1200 90 1200 98 V130 H880 V98 Q880 90 888 90" fill="#173e58"/>
+<text x="896" y="117" font-family="Arial" font-size="18" font-weight="bold" fill="white">StockMovements</text>
+<text x="896" y="158" class="field">PK Id : GUID</text>
+<text x="896" y="183" class="field">FK StockId : GUID</text>
+<text x="896" y="208" class="field">Type / Quantity / Reason</text>
+<text x="896" y="233" class="field">CreatedAt : UTC</text>
+<rect x="40" y="395" width="320" height="230" rx="8" fill="white" stroke="#b7cbd9"/>
+<path d="M48 395 H352 Q360 395 360 403 V435 H40 V403 Q40 395 48 395" fill="#173e58"/>
+<text x="56" y="422" font-family="Arial" font-size="18" font-weight="bold" fill="white">Branches</text>
+<text x="56" y="463" class="field">PK Id : GUID</text>
+<text x="56" y="488" class="field">Name / Address</text>
+<text x="56" y="513" class="field">Active</text>
+<rect x="460" y="395" width="320" height="230" rx="8" fill="white" stroke="#b7cbd9"/>
+<path d="M468 395 H772 Q780 395 780 403 V435 H460 V403 Q460 395 468 395" fill="#173e58"/>
+<text x="476" y="422" font-family="Arial" font-size="18" font-weight="bold" fill="white">Orders</text>
+<text x="476" y="463" class="field">PK Id : GUID</text>
+<text x="476" y="488" class="field">FK CustomerId / BranchId</text>
+<text x="476" y="513" class="field">Channel = canalPedido</text>
+<text x="476" y="538" class="field">ServiceType / Status / Total</text>
+<text x="476" y="563" class="field">DeliveryAddress / CreatedAt</text>
+<text x="476" y="588" class="field">Version : concorrência</text>
+<rect x="880" y="395" width="320" height="230" rx="8" fill="white" stroke="#b7cbd9"/>
+<path d="M888 395 H1192 Q1200 395 1200 403 V435 H880 V403 Q880 395 888 395" fill="#173e58"/>
+<text x="896" y="422" font-family="Arial" font-size="18" font-weight="bold" fill="white">Payments</text>
+<text x="896" y="463" class="field">PK Id : GUID</text>
+<text x="896" y="488" class="field">FK OrderId : GUID</text>
+<text x="896" y="513" class="field">UK IdempotencyKey</text>
+<text x="896" y="538" class="field">Amount / Status / CreatedAt</text>
+<text x="896" y="563" class="field">ProviderReference / Payload</text>
+<rect x="40" y="755" width="320" height="230" rx="8" fill="white" stroke="#b7cbd9"/>
+<path d="M48 755 H352 Q360 755 360 763 V795 H40 V763 Q40 755 48 755" fill="#173e58"/>
+<text x="56" y="782" font-family="Arial" font-size="18" font-weight="bold" fill="white">Products</text>
+<text x="56" y="823" class="field">PK Id : GUID</text>
+<text x="56" y="848" class="field">Name / Description / Price</text>
+<text x="56" y="873" class="field">LoyaltyEligible / Active</text>
+<rect x="460" y="755" width="320" height="230" rx="8" fill="white" stroke="#b7cbd9"/>
+<path d="M468 755 H772 Q780 755 780 763 V795 H460 V763 Q460 755 468 755" fill="#173e58"/>
+<text x="476" y="782" font-family="Arial" font-size="18" font-weight="bold" fill="white">Stocks</text>
+<text x="476" y="823" class="field">PK Id : GUID</text>
+<text x="476" y="848" class="field">FK BranchId / ProductId</text>
+<text x="476" y="873" class="field">UK (BranchId, ProductId)</text>
+<text x="476" y="898" class="field">Quantity &gt;= 0</text>
+<text x="476" y="923" class="field">Version : concorrência</text>
+<rect x="880" y="755" width="320" height="230" rx="8" fill="white" stroke="#b7cbd9"/>
+<path d="M888 755 H1192 Q1200 755 1200 763 V795 H880 V763 Q880 755 888 755" fill="#173e58"/>
+<text x="896" y="782" font-family="Arial" font-size="18" font-weight="bold" fill="white">OrderItems</text>
+<text x="896" y="823" class="field">PK Id : GUID</text>
+<text x="896" y="848" class="field">FK OrderId / ProductId</text>
+<text x="896" y="873" class="field">Quantity / UnitPrice</text>
+<text x="896" y="898" class="field">IsReward</text>
+<text x="40" y="1090" class="field">PK: chave primária · FK: chave estrangeira · UK: restrição de unicidade</text>
+<text x="40" y="1120" class="field">Setas: entidade referenciada → dependente. Pedido com ≥1 item é validado pela aplicação.</text>
+<text x="40" y="1148" class="field">Auditoria não armazena senha/token; saldos e regras são protegidos por transação e validação.</text>
+</svg>

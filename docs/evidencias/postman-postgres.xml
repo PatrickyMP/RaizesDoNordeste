@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Raízes do Nordeste - fluxo completo" tests="44" time="1.394">
+  <testsuite name="01 Preparação / T01 - Login administrador" id="2a814dbb-f6c3-4092-af55-01ea11d2f337" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.394">
+    <testcase name="HTTP 200" time="0.394" classname="01PreparacaoT01LoginAdministrador"/>
+    <testcase name="Token recebido" time="0.394" classname="01PreparacaoT01LoginAdministrador"/>
+  </testsuite>
+  <testsuite name="01 Preparação / T02 - Criar unidade exclusiva da execução" id="ddd22c5e-7509-40fe-b515-384ef4662c5c" timestamp="2026-09-03T01:27:44.508Z" tests="1" failures="0" errors="0" time="0.116">
+    <testcase name="HTTP 201" time="0.116" classname="01PreparacaoT02CriarUnidadeExclusivaDaExecucao"/>
+  </testsuite>
+  <testsuite name="01 Preparação / T03 - Criar produto exclusivo" id="9214db2a-e8eb-4249-a2d8-3ffe72e24e6f" timestamp="2026-09-03T01:27:44.508Z" tests="1" failures="0" errors="0" time="0.031">
+    <testcase name="HTTP 201" time="0.031" classname="01PreparacaoT03CriarProdutoExclusivo"/>
+  </testsuite>
+  <testsuite name="01 Preparação / T04 - Entrada de estoque" id="ed8ac2be-d1af-4f2f-aa6f-d0cbb5aea7dd" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.066">
+    <testcase name="HTTP 200" time="0.066" classname="01PreparacaoT04EntradaDeEstoque"/>
+    <testcase name="Saldo inicial" time="0.066" classname="01PreparacaoT04EntradaDeEstoque"/>
+  </testsuite>
+  <testsuite name="02 Cliente e pedido / T05 - Login cliente" id="d238829a-1ce1-42af-bda1-14de67895824" timestamp="2026-09-03T01:27:44.508Z" tests="1" failures="0" errors="0" time="0.043">
+    <testcase name="HTTP 200" time="0.043" classname="02ClienteEPedidoT05LoginCliente"/>
+  </testsuite>
+  <testsuite name="02 Cliente e pedido / T06 - Consultar cardápio por unidade" id="c5f3cb7b-dd40-4193-a3d2-12c5a9a20d66" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.048">
+    <testcase name="HTTP 200" time="0.048" classname="02ClienteEPedidoT06ConsultarCardapioPorUnidade"/>
+    <testcase name="Produto disponível" time="0.048" classname="02ClienteEPedidoT06ConsultarCardapioPorUnidade"/>
+  </testsuite>
+  <testsuite name="02 Cliente e pedido / T07 - Criar pedido multicanal" id="ca09c44b-8d62-46fc-97f6-5418560d342c" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.158">
+    <testcase name="HTTP 201" time="0.158" classname="02ClienteEPedidoT07CriarPedidoMulticanal"/>
+    <testcase name="Canal e total" time="0.158" classname="02ClienteEPedidoT07CriarPedidoMulticanal"/>
+  </testsuite>
+  <testsuite name="03 Pagamento / T08 - Pagamento recusado" id="7596a63f-1289-40b7-af82-20deac419ddb" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.087">
+    <testcase name="HTTP 200" time="0.087" classname="03PagamentoT08PagamentoRecusado"/>
+    <testcase name="Recusado" time="0.087" classname="03PagamentoT08PagamentoRecusado"/>
+  </testsuite>
+  <testsuite name="03 Pagamento / T09 - Pedido aguarda nova tentativa" id="ae40fa2a-4f47-4c21-a3da-a20515dfbf40" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.016">
+    <testcase name="HTTP 200" time="0.016" classname="03PagamentoT09PedidoAguardaNovaTentativa"/>
+    <testcase name="Status preservado" time="0.016" classname="03PagamentoT09PedidoAguardaNovaTentativa"/>
+  </testsuite>
+  <testsuite name="03 Pagamento / T10 - Falha simulada do gateway" id="33e50b56-213b-4c93-9023-14a8e69cf389" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.013">
+    <testcase name="HTTP 503" time="0.013" classname="03PagamentoT10FalhaSimuladaDoGateway"/>
+    <testcase name="Erro padronizado" time="0.013" classname="03PagamentoT10FalhaSimuladaDoGateway"/>
+  </testsuite>
+  <testsuite name="03 Pagamento / T11 - Pagamento aprovado" id="24c20e11-5aac-4454-a980-a6fd590b1beb" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.009">
+    <testcase name="HTTP 200" time="0.009" classname="03PagamentoT11PagamentoAprovado"/>
+    <testcase name="Aprovado e payload" time="0.009" classname="03PagamentoT11PagamentoAprovado"/>
+  </testsuite>
+  <testsuite name="03 Pagamento / T12 - Repetir mesma chave sem cobrar novamente" id="b058526a-b299-4919-9639-f1e73562f0a9" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.006">
+    <testcase name="HTTP 200" time="0.006" classname="03PagamentoT12RepetirMesmaChaveSemCobrarNovamente"/>
+    <testcase name="Mesmo pagamento" time="0.006" classname="03PagamentoT12RepetirMesmaChaveSemCobrarNovamente"/>
+  </testsuite>
+  <testsuite name="03 Pagamento / T13 - Confirmar pedido aceito" id="c6f60f7e-8107-40e6-a6d6-c6e20ebc0b80" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.005">
+    <testcase name="HTTP 200" time="0.005" classname="03PagamentoT13ConfirmarPedidoAceito"/>
+    <testcase name="Aceito" time="0.005" classname="03PagamentoT13ConfirmarPedidoAceito"/>
+  </testsuite>
+  <testsuite name="04 Status e auditoria / T14 - Cliente não pode preparar pedido" id="897c6df6-424e-4b75-9053-4ad8a0f82e3b" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.004">
+    <testcase name="HTTP 403" time="0.004" classname="04StatusEAuditoriaT14ClienteNaoPodePrepararPedido"/>
+    <testcase name="Erro padronizado" time="0.004" classname="04StatusEAuditoriaT14ClienteNaoPodePrepararPedido"/>
+  </testsuite>
+  <testsuite name="04 Status e auditoria / T15 - Preparar" id="fdc3d363-1420-4830-a2f4-107778166dcf" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.017">
+    <testcase name="HTTP 200" time="0.017" classname="04StatusEAuditoriaT15Preparar"/>
+    <testcase name="Em preparo" time="0.017" classname="04StatusEAuditoriaT15Preparar"/>
+  </testsuite>
+  <testsuite name="04 Status e auditoria / T16 - Pronto" id="4385d08d-7bfa-4af1-8ff1-6ee88dba9046" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.007">
+    <testcase name="HTTP 200" time="0.007" classname="04StatusEAuditoriaT16Pronto"/>
+    <testcase name="Pronto" time="0.007" classname="04StatusEAuditoriaT16Pronto"/>
+  </testsuite>
+  <testsuite name="04 Status e auditoria / T17 - Finalizar retirada" id="11a2ee7d-22e8-4104-883d-2cdd989a85b8" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.021">
+    <testcase name="HTTP 200" time="0.021" classname="04StatusEAuditoriaT17FinalizarRetirada"/>
+    <testcase name="Finalizado" time="0.021" classname="04StatusEAuditoriaT17FinalizarRetirada"/>
+  </testsuite>
+  <testsuite name="04 Status e auditoria / T18 - Consultar auditoria do pedido" id="09d27ef3-8386-4f55-b108-fd1027e00a9f" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.031">
+    <testcase name="HTTP 200" time="0.031" classname="04StatusEAuditoriaT18ConsultarAuditoriaDoPedido"/>
+    <testcase name="Criação e finalização auditadas" time="0.031" classname="04StatusEAuditoriaT18ConsultarAuditoriaDoPedido"/>
+  </testsuite>
+  <testsuite name="04 Status e auditoria / T19 - Filtrar canal" id="0e142f6b-832b-483b-94b6-d9bed2059271" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.025">
+    <testcase name="HTTP 200" time="0.025" classname="04StatusEAuditoriaT19FiltrarCanal"/>
+    <testcase name="Apenas TOTEM" time="0.025" classname="04StatusEAuditoriaT19FiltrarCanal"/>
+  </testsuite>
+  <testsuite name="04 Status e auditoria / T20 - Conferir baixa única no estoque" id="bf90379a-407f-43c4-8712-5c9f2c581644" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.018">
+    <testcase name="HTTP 200" time="0.018" classname="04StatusEAuditoriaT20ConferirBaixaUnicaNoEstoque"/>
+    <testcase name="Saldo 19" time="0.018" classname="04StatusEAuditoriaT20ConferirBaixaUnicaNoEstoque"/>
+  </testsuite>
+  <testsuite name="05 Erros / T21 - Sem token" id="7411cf76-e4db-4f46-a76d-fb9caff0930f" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.004">
+    <testcase name="HTTP 401" time="0.004" classname="05ErrosT21SemToken"/>
+    <testcase name="Erro padronizado" time="0.004" classname="05ErrosT21SemToken"/>
+  </testsuite>
+  <testsuite name="05 Erros / T22 - Login inválido" id="818975cd-e151-4613-9ef4-79367fbbe1a9" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.060">
+    <testcase name="HTTP 401" time="0.060" classname="05ErrosT22LoginInvalido"/>
+    <testcase name="Erro padronizado" time="0.060" classname="05ErrosT22LoginInvalido"/>
+  </testsuite>
+  <testsuite name="05 Erros / T23 - Canal ausente" id="de7900de-c044-438b-a58f-d4e12da4e109" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.006">
+    <testcase name="HTTP 400" time="0.006" classname="05ErrosT23CanalAusente"/>
+    <testcase name="Erro padronizado" time="0.006" classname="05ErrosT23CanalAusente"/>
+  </testsuite>
+  <testsuite name="05 Erros / T24 - Canal inválido" id="73c9786b-7783-49ff-bd5b-6443342f4970" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.004">
+    <testcase name="HTTP 400" time="0.004" classname="05ErrosT24CanalInvalido"/>
+    <testcase name="Erro padronizado" time="0.004" classname="05ErrosT24CanalInvalido"/>
+  </testsuite>
+  <testsuite name="05 Erros / T25 - Quantidade negativa" id="cf11598b-7c47-446a-ad22-037de806adb5" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.003">
+    <testcase name="HTTP 400" time="0.003" classname="05ErrosT25QuantidadeNegativa"/>
+    <testcase name="Erro padronizado" time="0.003" classname="05ErrosT25QuantidadeNegativa"/>
+  </testsuite>
+  <testsuite name="05 Erros / T26 - Unidade inexistente" id="2807ea56-1658-41e9-9271-33dfc8c10345" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.006">
+    <testcase name="HTTP 404" time="0.006" classname="05ErrosT26UnidadeInexistente"/>
+    <testcase name="Erro padronizado" time="0.006" classname="05ErrosT26UnidadeInexistente"/>
+  </testsuite>
+  <testsuite name="05 Erros / T27 - Produto inexistente" id="94608feb-a497-42c7-bf6e-340780366d69" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.006">
+    <testcase name="HTTP 404" time="0.006" classname="05ErrosT27ProdutoInexistente"/>
+    <testcase name="Erro padronizado" time="0.006" classname="05ErrosT27ProdutoInexistente"/>
+  </testsuite>
+  <testsuite name="05 Erros / T28 - Estoque insuficiente" id="cd93f7d0-c114-4115-bb43-8b90feb0ef60" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.006">
+    <testcase name="HTTP 409" time="0.006" classname="05ErrosT28EstoqueInsuficiente"/>
+    <testcase name="Erro padronizado" time="0.006" classname="05ErrosT28EstoqueInsuficiente"/>
+  </testsuite>
+  <testsuite name="05 Erros / T29 - Transição inválida" id="7891ec47-fcf3-4bca-a368-75fe74d2ff76" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.004">
+    <testcase name="HTTP 409" time="0.004" classname="05ErrosT29TransicaoInvalida"/>
+    <testcase name="Erro padronizado" time="0.004" classname="05ErrosT29TransicaoInvalida"/>
+  </testsuite>
+  <testsuite name="05 Erros / T30 - E-mail inválido" id="220c3b5c-8f7a-4058-8d71-e24366512d4b" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.009">
+    <testcase name="HTTP 400" time="0.009" classname="05ErrosT30EMailInvalido"/>
+    <testcase name="Erro padronizado" time="0.009" classname="05ErrosT30EMailInvalido"/>
+  </testsuite>
+  <testsuite name="06 Cancelamento / T31 - Criar pedido para cancelamento" id="a4be288f-8eb4-4808-a70f-b0a12d285f4a" timestamp="2026-09-03T01:27:44.508Z" tests="1" failures="0" errors="0" time="0.008">
+    <testcase name="HTTP 201" time="0.008" classname="06CancelamentoT31CriarPedidoParaCancelamento"/>
+  </testsuite>
+  <testsuite name="06 Cancelamento / T32 - Pagar pedido cancelável" id="c195258d-0029-4b77-bb6a-ee216bba06dc" timestamp="2026-09-03T01:27:44.508Z" tests="1" failures="0" errors="0" time="0.009">
+    <testcase name="HTTP 200" time="0.009" classname="06CancelamentoT32PagarPedidoCancelavel"/>
+  </testsuite>
+  <testsuite name="06 Cancelamento / T33 - Cancelar e estornar" id="f8c3a98e-a0e0-4108-b424-47d4fd47cdb9" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.018">
+    <testcase name="HTTP 200" time="0.018" classname="06CancelamentoT33CancelarEEstornar"/>
+    <testcase name="Cancelado e estornado" time="0.018" classname="06CancelamentoT33CancelarEEstornar"/>
+  </testsuite>
+  <testsuite name="06 Cancelamento / T34 - Conferir devolução de estoque" id="b3e66b73-8b8d-4987-918c-27c7ca0fde75" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.005">
+    <testcase name="HTTP 200" time="0.005" classname="06CancelamentoT34ConferirDevolucaoDeEstoque"/>
+    <testcase name="Saldo restaurado a 19" time="0.005" classname="06CancelamentoT34ConferirDevolucaoDeEstoque"/>
+  </testsuite>
+  <testsuite name="07 Gestão / T35 - Editar unidade" id="12ddc756-177c-4ba6-b6ec-f4618939124d" timestamp="2026-09-03T01:27:44.508Z" tests="1" failures="0" errors="0" time="0.015">
+    <testcase name="HTTP 200" time="0.015" classname="07GestaoT35EditarUnidade"/>
+  </testsuite>
+  <testsuite name="07 Gestão / T36 - Editar produto" id="1884d5dd-f236-4181-977a-2c1d405b5850" timestamp="2026-09-03T01:27:44.508Z" tests="1" failures="0" errors="0" time="0.015">
+    <testcase name="HTTP 200" time="0.015" classname="07GestaoT36EditarProduto"/>
+  </testsuite>
+  <testsuite name="07 Gestão / T37 - Saída manual por perda" id="d62f1dd9-00fc-4dbf-987f-79a1361927cb" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.016">
+    <testcase name="HTTP 200" time="0.016" classname="07GestaoT37SaidaManualPorPerda"/>
+    <testcase name="Saldo 17" time="0.016" classname="07GestaoT37SaidaManualPorPerda"/>
+  </testsuite>
+  <testsuite name="07 Gestão / T38 - Saída acima do saldo" id="c545b5db-8dce-4ba2-8e50-9193ef954850" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.005">
+    <testcase name="HTTP 409" time="0.005" classname="07GestaoT38SaidaAcimaDoSaldo"/>
+    <testcase name="Erro padronizado" time="0.005" classname="07GestaoT38SaidaAcimaDoSaldo"/>
+  </testsuite>
+  <testsuite name="07 Gestão / T39 - Histórico de estoque" id="b838d250-3a33-4bb5-b195-5a14098ff8fd" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.026">
+    <testcase name="HTTP 200" time="0.026" classname="07GestaoT39HistoricoDeEstoque"/>
+    <testcase name="Entrada, saída e estorno" time="0.026" classname="07GestaoT39HistoricoDeEstoque"/>
+  </testsuite>
+  <testsuite name="07 Gestão / T40 - Desativar produto" id="472acbe9-4de7-49f5-a762-1a40fa760b46" timestamp="2026-09-03T01:27:44.508Z" tests="1" failures="0" errors="0" time="0.011">
+    <testcase name="HTTP 204" time="0.011" classname="07GestaoT40DesativarProduto"/>
+  </testsuite>
+  <testsuite name="07 Gestão / T41 - Produto desativado indisponível" id="23bae18e-726d-4e13-98b4-0816485a278a" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.014">
+    <testcase name="HTTP 404" time="0.014" classname="07GestaoT41ProdutoDesativadoIndisponivel"/>
+    <testcase name="Erro padronizado" time="0.014" classname="07GestaoT41ProdutoDesativadoIndisponivel"/>
+  </testsuite>
+  <testsuite name="07 Gestão / T42 - Desativar unidade" id="8652ff2e-25d9-4801-85ff-5c8ee1886093" timestamp="2026-09-03T01:27:44.508Z" tests="1" failures="0" errors="0" time="0.010">
+    <testcase name="HTTP 204" time="0.010" classname="07GestaoT42DesativarUnidade"/>
+  </testsuite>
+  <testsuite name="07 Gestão / T43 - Unidade desativada indisponível" id="fdaebe73-b350-4021-b52b-08ce4db45076" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.013">
+    <testcase name="HTTP 404" time="0.013" classname="07GestaoT43UnidadeDesativadaIndisponivel"/>
+    <testcase name="Erro padronizado" time="0.013" classname="07GestaoT43UnidadeDesativadaIndisponivel"/>
+  </testsuite>
+  <testsuite name="07 Gestão / T44 - Histórico do pedido preservado" id="a8f27dc4-cb10-4121-8ecb-3d99d7968c57" timestamp="2026-09-03T01:27:44.508Z" tests="2" failures="0" errors="0" time="0.006">
+    <testcase name="HTTP 200" time="0.006" classname="07GestaoT44HistoricoDoPedidoPreservado"/>
+    <testcase name="Preço original" time="0.006" classname="07GestaoT44HistoricoDoPedidoPreservado"/>
+  </testsuite>
+</testsuites>

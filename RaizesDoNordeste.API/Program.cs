@@ -26,8 +26,29 @@ if (string.IsNullOrWhiteSpace(jwtKey) ||
         "Configure Jwt:Key com pelo menos 32 bytes.");
 }
 
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(connectionString));
+var databaseProvider =
+    builder.Configuration["Database:Provider"]
+    ?? "Postgres";
+
+if (databaseProvider.Equals(
+    "Postgres",
+    StringComparison.OrdinalIgnoreCase))
+{
+    builder.Services.AddDbContext<AppDbContext>(options =>
+        options.UseNpgsql(connectionString));
+}
+else if (databaseProvider.Equals(
+    "Sqlite",
+    StringComparison.OrdinalIgnoreCase))
+{
+    builder.Services.AddDbContext<AppDbContext>(options =>
+        options.UseSqlite(connectionString));
+}
+else
+{
+    throw new InvalidOperationException(
+        "Database:Provider deve ser Postgres ou Sqlite.");
+}
 
 builder.Services.AddScoped<IAppDbContext>(services =>
     services.GetRequiredService<AppDbContext>());
@@ -100,6 +121,10 @@ builder.Services.AddSwaggerGen(options =>
                 "Bearer",
                 document)] = []
         });
+
+    options.OperationFilter<ApiDocumentationFilter>();
+    options.IncludeXmlComments(
+        Path.Combine(AppContext.BaseDirectory, "RaizesDoNordeste.API.xml"));
 });
 
 builder.Services
@@ -155,7 +180,14 @@ using (var scope = app.Services.CreateScope())
         scope.ServiceProvider
             .GetRequiredService<AppDbContext>();
 
-    await db.Database.MigrateAsync();
+    if (app.Environment.IsEnvironment("Testing"))
+    {
+        await db.Database.EnsureCreatedAsync();
+    }
+    else
+    {
+        await db.Database.MigrateAsync();
+    }
 
     if (builder.Configuration.GetValue<bool>("Demo:Seed"))
     {
@@ -231,7 +263,7 @@ app.MapControllers();
 
 app.Run();
 
-// Necessário para os futuros testes de integração
+// Permite que WebApplicationFactory inicialize a API nos testes de integração
 public partial class Program
 {
 }

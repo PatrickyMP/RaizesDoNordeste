@@ -6,6 +6,6 @@
     <Project Path="RaizesDoNordeste.Infrastructure/RaizesDoNordeste.Infrastructure.csproj" />
   </Folder>
   <Folder Name="/tests/">
-    <Project Path="RaizesDorNordeste.Tests/RaizesDorNordeste.Tests.csproj" />
+    <Project Path="RaizesDoNordeste.Tests/RaizesDoNordeste.Tests.csproj" />
   </Folder>
 </Solution>
